@@ -1,0 +1,8 @@
+# Run type checking
+npm run type-check
+
+# Run build to check for build errors
+npm run build
+
+# Run lint-staged for ESLint checks on staged files
+npx lint-staged
