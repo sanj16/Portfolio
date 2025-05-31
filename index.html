@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alex Nova - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'VT323', monospace;
+        background-color: #0d0d1a; /* Fallback background */
+      }
+      .font-orbitron {
+        font-family: 'Orbitron', sans-serif;
+      }
+      .font-vt323 {
+        font-family: 'VT323', monospace;
+      }
+
+      /* Custom Scrollbar for Project Cards */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 5px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #1f1f2e; /* Slightly lighter than card bg */
+        border-radius: 10px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #a020f0; /* neon-purple */
+        border-radius: 10px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #c040ff; /* Lighter neon-purple */
+      }
+      .custom-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: #a020f0 #1f1f2e;
+      }
+
+      /* Keyframes for pulseNeon (Box Shadow Animation) */
+      @keyframes pulseNeon {
+        0%, 100% { box-shadow: 0 0 5px #a020f0, 0 0 10px #a020f0, 0 0 2px #a020f0 inset; } /* neon-purple */
+        50% { box-shadow: 0 0 10px #c040ff, 0 0 20px #c040ff, 0 0 4px #c040ff inset; } /* Lighter neon-purple */
+      }
+      .animate-pulseNeon {
+        animation: pulseNeon 2s infinite;
+      }
+
+      /* Glow effect for images on hover */
+      .bg-neon-purple-glow:hover {
+        box-shadow: 0 0 15px 5px rgba(160, 32, 240, 0.7); /* neon-purple with alpha */
+      }
+      
+      /* Button Neon Style */
+      .button-neon {
+        background-color: #a020f0; /* neon-purple */
+        color: white;
+        border: 2px solid #c040ff; /* Lighter neon-purple */
+        box-shadow: 0 0 5px #a020f0, 0 0 10px #a020f0;
+        transition: all 0.3s ease;
+      }
+      .button-neon:hover {
+        background-color: #c040ff;
+        box-shadow: 0 0 10px #c040ff, 0 0 20px #c040ff;
+      }
+       /* Tailwind JIT needs some base styles for custom fonts to be picked up correctly by components */
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              orbitron: ['Orbitron', 'sans-serif'],
+              vt323: ['VT323', 'monospace'],
+            },
+            colors: {
+              'neon-purple': '#a020f0',
+              'deep-space': '#0d0d1a',
+            },
+            animation: {
+               fadeInUp: 'fadeInUp 1s ease-out forwards',
+               slideInLeft: 'slideInLeft 0.8s ease-out forwards',
+               slideInRight: 'slideInRight 0.8s ease-out forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                'from': { opacity: '0', transform: 'translateY(20px)' },
+                'to': { opacity: '1', transform: 'translateY(0)' },
+              },
+              slideInLeft: {
+                'from': { opacity: '0', transform: 'translateX(-50px)' },
+                'to': { opacity: '1', transform: 'translateX(0)' },
+              },
+              slideInRight: {
+                'from': { opacity: '0', transform: 'translateX(50px)' },
+                'to': { opacity: '1', transform: 'translateX(0)' },
+              }
+            }
+          }
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
